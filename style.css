@@ -16,4 +16,22 @@ h1{
 }
 button{
     width:50%;
+    border:none;
+    font-size:3rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+#confirm{
+    background-color:#d5e68d;
+}
+#confirm:hover{
+    background-color:#13290a;
+    color:#fff;
+}
+#cancel{
+    background-color:#e21a1a66;
+}
+#cancel:hover{
+    background-color:#6b0504;
+    color:#fff;
 }
