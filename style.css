@@ -1,44 +1,95 @@
-*{
-    margin:0;
-    padding:0;
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito", sans-serif;
 }
-body{
-    display: flex;
-    justify-content:center;
-    height:100vh;
-    overflow:hidden;
+body {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
 }
-h1{
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform: translate(-50%, -50%);
-    font-size:4rem;
-    padding:100px 75px;
-    background:rgba(255,255,255,0.5);
-    border:1px solid white;
-    border-radius: 40px;
-    backdrop-filter: blur(20px);
-    color:#000;
+h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
+  padding: 100px 75px;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid white;
+  border-radius: 40px;
+  backdrop-filter: blur(20px);
+  color: #000;
 }
-button{
-    width:50%;
-    border:none;
-    font-size:2.5rem;
-    cursor: pointer;
-    transition: all 0.3s;
+button {
+  width: 50%;
+  border: none;
+  font-size: 2.5rem;
+  cursor: pointer;
+  transition: all 0.3s;
 }
-#confirm{
-    background-color:#d5e68d;
+#confirm {
+  background-color: #d5e68d;
 }
-#confirm:hover{
-    background-color:#13290a;
-    color:#fff;
+#confirm:hover {
+  background-color: #13290a;
+  color: #fff;
 }
-#cancel{
-    background-color:#e21a1a66;
+#cancel {
+  background-color: #e21a1a66;
 }
-#cancel:hover{
-    background-color:#6b0504;
-    color:#fff;
+#cancel:hover {
+  background-color: #6b0504;
+  color: #fff;
+}
+.face {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.eyes {
+  display: flex;
+  justify-content: space-between;
+}
+.eyes div {
+  border-top: none;
+  margin: 30px 20px;
+  background-color: #151843;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+}
+.mouth {
+  height: 5px;
+  width: 50px;
+
+  background-color: #151843;
+  transition:0.3s;
+}
+#confirm:hover .eyes div, #cancel:hover .eyes div {
+  background-color: #fff;
+}
+#confirm:hover .mouth, #cancel:hover .mouth {
+  background-color: transparent;
+  border: 5px solid #fff;
+  border-top: none;
+  border-radius: 0;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  animation: mouth 1s ease infinite alternate;
+}
+#cancel .mouth {
+  transform:rotate(180deg);
+  }
+@keyframes mouth {
+  from {
+    width: 30px;
+    height: 30px;
+  }
+  to {
+    width: 40px;
+    height: 40px;
+  }
 }
