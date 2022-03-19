@@ -7,14 +7,11 @@
 body {
   display: flex;
   justify-content: center;
+  align-items: center;
   height: 100vh;
   overflow: hidden;
 }
 h1 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   font-size: 4rem;
   padding: 100px 75px;
   background: rgba(255, 255, 255, 0.5);
@@ -22,32 +19,42 @@ h1 {
   border-radius: 40px;
   backdrop-filter: blur(20px);
   color: #000;
+  display: none;
 }
 button {
+  /* position: absolute; */
+  /* top: 50%; */
+  /* transform: translateY(-50%); */
   width: 50%;
+  height: 100%;
   border: none;
   font-size: 2.5rem;
   cursor: pointer;
+  background-color: #da945f;
   transition: all 0.3s;
 }
+button.disabled {
+  pointer-events: none;
+}
 #confirm {
-  background-color: #d5e68d;
+  left: 0;
+  /* background-color: #d5e68d; */
 }
 #confirm:hover {
-  background-color: #13290a;
-  color: #fff;
+  background-color: #d5e68d;
 }
 #cancel {
-  background-color: #e21a1a66;
+  right: 0;
 }
 #cancel:hover {
-  background-color: #6b0504;
-  color: #fff;
+  background-color: #e21a1a66;
 }
 .face {
+  position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* display:none; */
 }
 .eyes {
   display: flex;
@@ -66,14 +73,10 @@ button {
   width: 50px;
 
   background-color: #151843;
-  transition:0.3s;
+  transition: 0.3s;
 }
-#confirm:hover .eyes div, #cancel:hover .eyes div {
-  background-color: #fff;
-}
-#confirm:hover .mouth, #cancel:hover .mouth {
-  background-color: transparent;
-  border: 5px solid #fff;
+.face.happy .mouth {
+  border: 5px solid #151843;
   border-top: none;
   border-radius: 0;
   border-bottom-left-radius: 50%;
@@ -81,8 +84,8 @@ button {
   animation: mouth 1s ease infinite alternate;
 }
 #cancel .mouth {
-  transform:rotate(180deg);
-  }
+  transform: rotate(180deg);
+}
 @keyframes mouth {
   from {
     width: 30px;
