@@ -3,9 +3,10 @@ const cancelBtn = document.querySelector("#cancel");
 const confirmBtn = document.querySelector("#confirm");
 const face = document.querySelector("#face");
 
+
 confirmBtn.addEventListener("click", () => {
   btns.forEach((btn) => btn.classList.add("disabled"));
-  const tl1 = gsap.timeline();
+  const tl1 = gsap.timeline({ onComplete: confetti });
   tl1
     .to(btns, {
       height: "150px",
