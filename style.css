@@ -12,6 +12,8 @@ body {
   overflow: hidden;
 }
 h1 {
+    position:absolute;
+    
   font-size: 4rem;
   padding: 100px 75px;
   background: rgba(255, 255, 255, 0.5);
@@ -19,7 +21,6 @@ h1 {
   border-radius: 40px;
   backdrop-filter: blur(20px);
   color: #000;
-  display: none;
 }
 button {
   width: 50%;

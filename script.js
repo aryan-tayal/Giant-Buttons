@@ -3,17 +3,24 @@ const cancelBtn = document.querySelector("#cancel");
 const confirmBtn = document.querySelector("#confirm");
 const face = document.querySelector("#face");
 
-
 confirmBtn.addEventListener("click", () => {
   btns.forEach((btn) => btn.classList.add("disabled"));
   const tl1 = gsap.timeline({ onComplete: confetti });
   tl1
-    .to(btns, {
-      height: "150px",
+    .to("h1", {
+      opacity: 0,
     })
+    .to(
+      btns,
+      {
+        height: "150px",
+      },
+      "=-0.5"
+    )
     .to(btns, {
       width: "400px",
     })
+
     .to(btns, {
       background: "#d5e68d",
     })
@@ -32,9 +39,16 @@ cancelBtn.addEventListener("click", () => {
   btns.forEach((btn) => btn.classList.add("disabled"));
   const tl2 = gsap.timeline();
   tl2
-    .to(btns, {
-      height: "150px",
+    .to("h1", {
+      opacity: 0,
     })
+    .to(
+      btns,
+      {
+        height: "150px",
+      },
+      "=-0.5"
+    )
     .to(btns, {
       width: "400px",
     })
